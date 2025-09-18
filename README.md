@@ -28,15 +28,15 @@ It leverages a powerful **XGBoost machine learning model** to provide an end-to-
 
 The system follows a classic **three-tier architecture**:
 ```graphql
-+-----------------+ +------------------------+ +-------------------+
-| Frontend | | Backend (Flask API) | | Data Layer |
-| (HTML, CSS, JS) | <--> | (app.py) | <--> | (PostgreSQL DB) |
-+-----------------+ +------------------------+ +-------------------+
-| | |
-| v |
-| +--------------------+ |
-| | ML Model (XGBoost) | |
-| +--------------------+ |
++-----------------+      +------------------------+      +-------------------+
+|   Frontend      |      |   Backend (Flask API)  |      |   Data Layer      |
+| (HTML, CSS, JS) | <--> | (app.py)               | <--> | (PostgreSQL DB)   |
++-----------------+      +------------------------+      +-------------------+
+                         |           |            |
+                         |           v            |
+                         | +--------------------+ |
+                         | | ML Model (XGBoost) | |
+                         | +--------------------+ |
 ```
 
 

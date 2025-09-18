@@ -37,3 +37,39 @@ The system follows a classic **three-tier architecture**:
 | +--------------------+ |
 | | ML Model (XGBoost) | |
 | +--------------------+ |
+
+
+
+- **Frontend**: Static web interface for claim submission and results lookup.  
+- **Backend (Flask API)**: Core application logic, ML model integration, DB interaction.  
+- **Data Layer**: PostgreSQL (Dockerized) storing claim records and fraud analysis results.  
+
+---
+
+## 🛠️ Technology Stack
+
+| Category        | Technologies |
+|-----------------|--------------|
+| **Backend**     | Python, Flask, Flask-CORS |
+| **Database**    | PostgreSQL |
+| **ML & Data**   | Scikit-learn, XGBoost, Pandas, NumPy |
+| **Frontend**    | HTML5, CSS3, JavaScript, Chart.js |
+| **Containerization** | Docker |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Python **3.8+**
+- Docker installed and running
+
+---
+
+### ⚙️ Setup and Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/SecureClaim-AI.git
+   cd SecureClaim-AI
+```

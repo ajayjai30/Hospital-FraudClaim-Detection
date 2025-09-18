@@ -77,12 +77,12 @@ The system follows a classic **three-tier architecture**:
 2. **Setup the backend**
    - Create and activate a virtual environment
 
-   ### macOS/Linux
+   ##### macOS/Linux
    ```bash
       python3 -m venv venv
       source venv/bin/activate
     ```
-    ### Windows
+    ##### Windows
     ```bash
     python -m venv venv
     .\venv\Scripts\activate
@@ -92,7 +92,7 @@ The system follows a classic **three-tier architecture**:
     pip install -r requirements.txt
     ```
 
-   3. **Run PostgreSQL with Docker**
+3. **Run PostgreSQL with Docker**
 
       ```bash
       docker run --name fraud-db \
@@ -101,11 +101,11 @@ The system follows a classic **three-tier architecture**:
       -e POSTGRES_DB=fraud_detection \
       -p 5432:5432 -d postgres
       ```
-      - Verify the DB connection with:
+    - Verify the DB connection with:
 
-        ```python
-          python connection_test.py
-        ```
+      ```python
+      python connection_test.py
+      ```
         
 
         

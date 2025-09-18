@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Demo | SecureClaim AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a84ff;
+            --primary-dark: #0066cc;
+            --secondary: #7856ff;
+            --accent: #ff375f;
+            --dark-bg: #000000;
+            --dark-surface: #1c1c1e;
+            --dark-card: #2c2c2e;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73;
+            --success: #30d158;
+            --border: #404044;
+            --glass-bg: rgba(44, 44, 46, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        /* Hide the new claim section by default */
+        #newClaimSection {
+            display: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--dark-bg);
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(10, 132, 255, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(120, 86, 255, 0.1) 0%, transparent 25%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.6rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 32px;
+            padding: 0px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 32px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background-color: #e5003f;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-secondary);
+        }
+
+        /* Demo Form Section */
+        .demo-form-section {
+            padding: 100px 0 80px;
+            flex: 1;
+        }
+
+        .demo-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .demo-info {
+            flex: 1;
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            height: fit-content;
+        }
+
+        .demo-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .info-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .demo-form {
+            flex: 2;
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-title h2 {
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-title p {
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 16px;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.3);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-section-title {
+            grid-column: span 2;
+            margin: 20px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .form-note {
+            grid-column: span 2;
+            background: rgba(10, 132, 255, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* New styles for the claim ID input and button */
+        .claim-id-section {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .claim-id-input {
+            flex: 1;
+        }
+
+        .claim-id-btn {
+            white-space: nowrap;
+        }
+
+        .new-claim-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .new-claim-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .new-claim-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-surface);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border);
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--dark-card);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .demo-container {
+                flex-direction: column;
+            }
+
+            .demo-info,
+            .demo-form {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .form-section-title {
+                grid-column: span 1;
+            }
+
+            .form-note {
+                grid-column: span 1;
+            }
+
+            .submit-btn {
+                grid-column: span 1;
+            }
+
+            .demo-form-section {
+                padding: 130px 0 60px;
+            }
+
+            .claim-id-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .claim-id-btn {
+                width: 100%;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header class="apple-glass">
+        <div class="container">
+            <nav>
+                <a href="Home.html" class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>SecureClaim AI</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="Home.html" class="btn btn-outline">Back to Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Demo Form Section -->
+    <section class="demo-form-section">
+        <div class="container">
+            <div class="demo-container">
+                <div class="demo-info animated">
+                    <h2>How We Analyze Claims</h2>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Claim Amount Analysis</h4>
+                            <p>We compare claim amount vs. policy coverage. Very high or maxed-out claims are flagged as
+                                suspicious.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Policy Details Verification</h4>
+                            <p>We check the time gap between policy start date and claim date. Claims filed shortly
+                                after policy purchase are investigated.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-car-crash"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Incident Analysis</h4>
+                            <p>We examine incident date vs. claim date, location patterns, and type of incident for
+                                inconsistencies.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Claimant History Check</h4>
+                            <p>We analyze past claim history and demographic information to identify potential fraud
+                                patterns.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-form animated">
+                    <div class="form-title">
+                        <h2>Analyze a Claim</h2>
+                    </div>
+
+                    <div id="loadClaimSection">
+                        <p class="form-note" style="grid-column: span 2;">
+                            <i class="fas fa-info-circle"></i> Enter the claim ID below to load and analyze an existing
+                            claim.
+                        </p>
+                        <div class="claim-id-section">
+                            <input type="text" id="claimIdInput" placeholder="Enter an existing Claim ID">
+                            <button class="btn btn-outline claim-id-btn" id="loadClaimBtn">Load Claim</button>
+                        </div>
+                        <div class="new-claim-link">
+                            <a href="#" id="newClaimLink">Don't have a Claim ID? Start a new one.</a>
+                        </div>
+                    </div>
+
+                    <div id="newClaimSection">
+                        <form id="demoRequestForm">
+                            <div class="form-grid">
+
+                                <h3 class="form-section-title">Claim Information for Analysis</h3>
+                                <div class="form-note">
+                                    <i class="fas fa-info-circle"></i> The following information helps us demonstrate
+                                    our
+                                    fraud detection capabilities specific to your use case.
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="claimAmount">Claim Amount (₹)</label>
+                                    <input type="number" id="claimAmount" name="claimAmount" placeholder="e.g. 499500">
+                                </div>
+                                <div class="form-group">
+                                    <label for="policyCoverage">Policy Coverage Amount (₹)</label>
+                                    <input type="number" id="policyCoverage" name="policyCoverage"
+                                        placeholder="e.g. 500000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="policyStart">Policy Start Date</label>
+                                    <input type="date" id="policyStart" name="policyStart">
+                                </div>
+                                <div class="form-group">
+                                    <label for="claimDate">Claim Date</label>
+                                    <input type="date" id="claimDate" name="claimDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="incidentDate">Incident Date</label>
+                                    <input type="date" id="incidentDate" name="incidentDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="incidentLocation">Incident Location</label>
+                                    <input type="text" id="incidentLocation" name="incidentLocation"
+                                        placeholder="City or specific location">
+                                </div>
+                                <div class="form-group">
+                                    <label for="previousClaims">Previous Claims by Claimant</label>
+                                    <input type="number" id="previousClaims" name="previousClaims"
+                                        placeholder="Number of previous claims" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="providerId">Provider ID</label>
+                                    <input type="text" id="providerId" name="providerId"
+                                        placeholder="Enter provider identification number">
+                                </div>
+
+                                <!-- New fields from the model -->
+                                <h3 class="form-section-title">AI Model Features</h3>
+                                <div class="form-note">
+                                    <i class="fas fa-info-circle"></i> These fields are used by the AI model to
+                                    determine
+                                    the
+                                    risk score.
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="InscClaimAmtReimbursed">Insurance Claim Amount Reimbursed (₹)</label>
+                                    <input type="number" id="InscClaimAmtReimbursed" name="InscClaimAmtReimbursed"
+                                        placeholder="e.g. 25000">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="DeductibleAmtPaid">Deductible Amount Paid (₹)</label>
+                                    <input type="number" id="DeductibleAmtPaid" name="DeductibleAmtPaid"
+                                        placeholder="e.g. 500">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Gender">Gender</label>
+                                    <select id="Gender" name="Gender">
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Race">Race</label>
+                                    <select id="Race" name="Race">
+                                        <option value="">Select Race</option>
+                                        <option value="White">White</option>
+                                        <option value="Black">Black</option>
+                                        <option value="Other">Other</option>
+                                        <option value="Asian">Asian</option>
+                                        <option value="Hispanic">Hispanic</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="RenalDiseaseIndicator">Renal Disease Indicator</label>
+                                    <select id="RenalDiseaseIndicator" name="RenalDiseaseIndicator">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="State">State</label>
+                                    <input type="text" id="State" name="State" placeholder="e.g. New York">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="County">County</label>
+                                    <input type="text" id="County" name="County" placeholder="e.g. Los Angeles">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="NoOfMonth_PartACov">Months Part A Coverage</label>
+                                    <input type="number" id="NoOfMonth_PartACov" name="NoOfMonth_PartACov" min="0">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="NoOfMonth_PartBCov">Months Part B Coverage</label>
+                                    <input type="number" id="NoOfMonth_PartBCov" name="NoOfMonth_PartBCov" min="0">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_Alzheimer">Chronic Cond. Alzheimer</label>
+                                    <select id="ChronicCond_Alzheimer" name="ChronicCond_Alzheimer">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_Heartfailure">Chronic Cond. Heart failure</label>
+                                    <select id="ChronicCond_Heartfailure" name="ChronicCond_Heartfailure">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_KidneyDisease">Chronic Cond. Kidney Disease</label>
+                                    <select id="ChronicCond_KidneyDisease" name="ChronicCond_KidneyDisease">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_Cancer">Chronic Cond. Cancer</label>
+                                    <select id="ChronicCond_Cancer" name="ChronicCond_Cancer">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_ObstrPulmonary">Chronic Cond. ObstrPulmonary</label>
+                                    <select id="ChronicCond_ObstrPulmonary" name="ChronicCond_ObstrPulmonary">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_Depression">Chronic Cond. Depression</label>
+                                    <select id="ChronicCond_Depression" name="ChronicCond_Depression">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_Diabetes">Chronic Cond. Diabetes</label>
+                                    <select id="ChronicCond_Diabetes" name="ChronicCond_Diabetes">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_IschemicHeart">Chronic Cond. Ischemic Heart</label>
+                                    <select id="ChronicCond_IschemicHeart" name="ChronicCond_IschemicHeart">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_Osteoporosis">Chronic Cond. Osteoporosis</label>
+                                    <select id="ChronicCond_Osteoporosis" name="ChronicCond_Osteoporosis">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_rheumatoidarthritis">Chronic Cond. Rheumatoid
+                                        arthritis</label>
+                                    <select id="ChronicCond_rheumatoidarthritis" name="ChronicCond_rheumatoidarthritis">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ChronicCond_stroke">Chronic Cond. Stroke</label>
+                                    <select id="ChronicCond_stroke" name="ChronicCond_stroke">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="IPAnnualReimbursementAmt">IP Annual Reimbursement Amount (₹)</label>
+                                    <input type="number" id="IPAnnualReimbursementAmt" name="IPAnnualReimbursementAmt"
+                                        placeholder="e.g. 50000">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="IPAnnualDeductibleAmt">IP Annual Deductible Amount (₹)</label>
+                                    <input type="number" id="IPAnnualDeductibleAmt" name="IPAnnualDeductibleAmt"
+                                        placeholder="e.g. 1000">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="OPAnnualReimbursementAmt">OP Annual Reimbursement Amount (₹)</label>
+                                    <input type="number" id="OPAnnualReimbursementAmt" name="OPAnnualReimbursementAmt"
+                                        placeholder="e.g. 25000">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="OPAnnualDeductibleAmt">OP Annual Deductible Amount (₹)</label>
+                                    <input type="number" id="OPAnnualDeductibleAmt" name="OPAnnualDeductibleAmt"
+                                        placeholder="e.g. 500">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="BeneID_freq_encoded">Bene ID (Frequency Encoded)</label>
+                                    <input type="number" id="BeneID_freq_encoded" name="BeneID_freq_encoded"
+                                        placeholder="e.g. 5">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Provider_freq_encoded">Provider ID (Frequency Encoded)</label>
+                                    <input type="number" id="Provider_freq_encoded" name="Provider_freq_encoded"
+                                        placeholder="e.g. 12">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="AttendingPhysician_freq_encoded">Attending Physician (Frequency
+                                        Encoded)</label>
+                                    <input type="number" id="AttendingPhysician_freq_encoded"
+                                        name="AttendingPhysician_freq_encoded" placeholder="e.g. 7">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="OperatingPhysician_freq_encoded">Operating Physician (Frequency
+                                        Encoded)</label>
+                                    <input type="number" id="OperatingPhysician_freq_encoded"
+                                        name="OperatingPhysician_freq_encoded" placeholder="e.g. 2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="OtherPhysician_freq_encoded">Other Physician (Frequency Encoded)</label>
+                                    <input type="number" id="OtherPhysician_freq_encoded"
+                                        name="OtherPhysician_freq_encoded" placeholder="e.g. 3">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="DiagnosisGroupCode_freq_encoded">Diagnosis Group Code (Frequency
+                                        Encoded)</label>
+                                    <input type="number" id="DiagnosisGroupCode_freq_encoded"
+                                        name="DiagnosisGroupCode_freq_encoded" placeholder="e.g. 4">
+                                </div>
+
+                                <div class="submit-btn">
+                                    <button type="submit" class="btn btn-accent">Submit New Claim</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>SecureClaim AI</h3>
+                    <p>Advanced fraud detection powered by artificial intelligence and machine learning.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Whitepapers</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">info@secureclaimai.com</a></li>
+                        <li><a href="#">+1 (800) 123-4567</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Demo Request</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SecureClaim AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('demoRequestForm');
+            const claimIdInput = document.getElementById('claimIdInput');
+            const loadClaimBtn = document.getElementById('loadClaimBtn');
+            const loadClaimSection = document.getElementById('loadClaimSection');
+            const newClaimSection = document.getElementById('newClaimSection');
+            const newClaimLink = document.getElementById('newClaimLink');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            // --- STATE MANAGEMENT ---
+            // Keep track of the currently loaded claim ID to differentiate between workflows
+            let loadedClaimId = null;
+
+            // --- UI CONTROL FUNCTIONS ---
+            function showNewClaimForm() {
+                loadClaimSection.style.display = 'none';
+                newClaimSection.style.display = 'block';
+                form.reset(); // Clear the form for new entry
+                loadedClaimId = null; // Ensure no claim is loaded
+                submitBtn.textContent = 'Submit New Claim';
+            }
+
+            // --- EVENT LISTENERS ---
+
+            // "Start a new one" link
+            newClaimLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                showNewClaimForm();
+            });
+
+            // "Load Claim" button
+            loadClaimBtn.addEventListener('click', async function (e) {
+                e.preventDefault();
+                const claimId = claimIdInput.value;
+                if (!claimId) {
+                    alert("Please enter a Claim ID.");
+                    return;
+                }
+
+                try {
+                    const resp = await fetch(`/api/result/${claimId}`);
+                    const data = await resp.json();
+                    if (!resp.ok) {
+                        alert("Error: " + (data.error || "Claim not found"));
+                    } else {
+                        // Switch to the form view
+                        loadClaimSection.style.display = 'none';
+                        newClaimSection.style.display = 'block';
+
+                        // Populate the form with fetched data for confirmation
+                        populateForm(data.claim);
+
+                        // Store the loaded ID and update the button
+                        loadedClaimId = claimId;
+                        submitBtn.textContent = 'Confirm Details & Re-Analyze';
+
+                        alert("Claim data loaded. Please confirm the details below. You can make changes and submit, or click 'Re-Analyze' to proceed.");
+                    }
+                } catch (err) {
+                    alert("Network error fetching claim.");
+                }
+            });
+
+            // Main form submission handler
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+                try {
+                    let resp;
+                    let endpoint;
+                    let options;
+
+                    // --- WORKFLOW ROUTING ---
+                    // Decide which API endpoint to call based on whether a claim is loaded
+                    if (loadedClaimId) {
+                        // A claim was loaded, so we are re-analyzing it.
+                        endpoint = `/api/analyze/${loadedClaimId}`;
+                        options = { method: 'POST' }; // No body needed, backend fetches data
+                    } else {
+                        // This is a brand new claim submission.
+                        endpoint = '/api/submit';
+                        const payload = buildPayloadFromForm(); // Collect all form data
+                        options = {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        };
+                    }
+
+                    resp = await fetch(endpoint, options);
+                    const data = await resp.json();
+
+                    if (!resp.ok) {
+                        alert("Error: " + (data.error || "Request failed"));
+                    } else {
+                        // On success, redirect to the results page
+                        window.location.href = `Result.html?claim_id=${data.claim_id}`;
+                    }
+                } catch (err) {
+                    alert("Network error processing claim: " + err);
+                } finally {
+                    // Reset button state regardless of outcome
+                    submitBtn.disabled = false;
+                    // The text will be reset to default when the user starts a new action
+                }
+            });
+
+            // --- DATA HANDLING FUNCTIONS ---
+
+            // Function to populate form fields with data fetched from the database
+            function populateForm(data) {
+                // Helper to safely set value
+                const setValue = (id, value) => {
+                    const el = document.getElementById(id);
+                    if (el) el.value = value || '';
+                };
+
+                // Populate main claim details
+                setValue('claimAmount', data.claim_amount);
+                setValue('policyCoverage', data.policy_coverage);
+                setValue('policyStart', data.policy_start);
+                setValue('claimDate', data.claim_date);
+                setValue('incidentDate', data.incident_date);
+                setValue('incidentLocation', data.incident_location);
+                setValue('previousClaims', data.previous_claims);
+                setValue('providerId', data.provider_id);
+
+                // Populate AI model features from the nested JSON object
+                if (data.model_features) {
+                    const features = data.model_features; // It's already an object
+                    for (const key in features) {
+                        setValue(key, features[key]);
+                    }
+                }
+            }
+
+            // Function to build the JSON payload from all form fields for a new submission
+            function buildPayloadFromForm() {
+                const formData = new FormData(form);
+                const payload = {};
+                for (let [key, value] of formData.entries()) {
+                    payload[key] = value;
+                }
+                return payload;
+            }
+        });
+    </script>
+</body>
+
+</html>

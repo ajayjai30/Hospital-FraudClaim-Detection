@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Result | SecureClaim AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #0a84ff;
+            --primary-dark: #0066cc;
+            --secondary: #7856ff;
+            --accent: #ff375f;
+            --dark-bg: #000000;
+            --dark-surface: #1c1c1e;
+            --dark-card: #2c2c2e;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73;
+            --success: #30d158;
+            --warning: #ff9f0a;
+            --danger: #ff375f;
+            --border: #404044;
+            --glass-bg: rgba(44, 44, 46, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--dark-bg);
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(10, 132, 255, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(120, 86, 255, 0.1) 0%, transparent 25%);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .result-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .result-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .fraud-indicator-container {
+            text-align: center;
+        }
+
+        .fraud-level {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 15px 0;
+            transition: color 0.5s ease;
+        }
+
+        .fraud-level.high-risk {
+            color: var(--danger);
+        }
+
+        .fraud-level.medium-risk {
+            color: var(--warning);
+        }
+
+        .fraud-level.low-risk {
+            color: var(--success);
+        }
+
+        .fraud-visual {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            background: var(--dark-card);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .fraud-progress {
+            height: 100%;
+            border-radius: 15px;
+            width: 0;
+            /* Starts at 0, animated by JS */
+            transition: width 1.5s ease-out, background-color 1.5s ease;
+        }
+
+        .fraud-progress.high-risk {
+            background-color: var(--danger);
+        }
+
+        .fraud-progress.medium-risk {
+            background-color: var(--warning);
+        }
+
+        .fraud-progress.low-risk {
+            background-color: var(--success);
+        }
+
+        .risk-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .risk-item {
+            background: var(--dark-card);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .risk-item h4 {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .risk-item p {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--dark-card);
+            border-radius: 12px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--dark-card);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--dark-surface);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="result-header">
+                <h1>Analysis Complete</h1>
+                <p>Fraud risk assessment for Claim ID: <strong id="claimIdText">...</strong></p>
+            </div>
+
+            <div class="fraud-indicator-container">
+                <div class="fraud-level" id="fraudLevel">Analyzing...</div>
+
+                <div class="fraud-visual">
+                    <div class="fraud-progress" id="fraudProgress"></div>
+                </div>
+
+                <div class="risk-details">
+                    <div class="risk-item">
+                        <h4>Risk Score</h4>
+                        <p id="riskScore">--%</p>
+                    </div>
+                    <div class="risk-item">
+                        <h4>Claim Amount</h4>
+                        <p id="claimAmount">--</p>
+                    </div>
+                    <div class="risk-item">
+                        <h4>Policy Start Date</h4>
+                        <p id="policyStart">--</p>
+                    </div>
+                    <div class="risk-item">
+                        <h4>Claimant History</h4>
+                        <p id="previousClaims">--</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="probabilityChart"></canvas>
+            </div>
+
+            <div class="action-buttons">
+                <a href="Input.html" class="btn btn-primary"><i class="fas fa-plus"></i> Analyze Another Claim</a>
+                <a href="Dashboard.html" class="btn btn-secondary"><i class="fas fa-chart-pie"></i> View Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const params = new URLSearchParams(window.location.search);
+            const claimId = params.get("claim_id");
+            const claimIdText = document.getElementById('claimIdText');
+
+            if (!claimId) {
+                claimIdText.textContent = "Not Provided";
+                document.getElementById('fraudLevel').textContent = "Error";
+                return;
+            }
+            claimIdText.textContent = claimId;
+
+            try {
+                const resp = await fetch(`/api/result/${claimId}`);
+                const data = await resp.json();
+
+                if (!resp.ok) {
+                    throw new Error(data.error || "Failed to fetch claim details");
+                }
+
+                const claim = data.claim;
+
+                // --- Update UI with dynamic data from the backend ---
+                const fraudLevelEl = document.getElementById('fraudLevel');
+                const fraudProgressEl = document.getElementById('fraudProgress');
+                const riskScore = claim.risk_score || 0;
+                const riskLabel = claim.risk_label || "Unknown";
+
+                // 1. Update Risk Label and Score
+                fraudLevelEl.textContent = riskLabel;
+                document.getElementById('riskScore').textContent = `${riskScore}%`;
+
+                // 2. Update Progress Bar and Colors
+                const riskClass = riskLabel.toLowerCase().replace(' ', '-'); // e.g., 'high-risk'
+                fraudLevelEl.classList.add(riskClass);
+                fraudProgressEl.classList.add(riskClass);
+
+                // Animate the progress bar after a short delay
+                setTimeout(() => {
+                    fraudProgressEl.style.width = `${riskScore}%`;
+                }, 100);
+
+                // 3. Populate Detailed Breakdown
+                document.getElementById('claimAmount').textContent = `₹${parseFloat(claim.claim_amount || 0).toLocaleString()}`;
+                document.getElementById('policyStart').textContent = claim.policy_start || "N/A";
+                document.getElementById('previousClaims').textContent = `${claim.previous_claims || 0} prior claims`;
+
+                // 4. Render the Probability Chart
+                renderChart(claim.model_output);
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById('fraudLevel').textContent = "Load Failed";
+                document.getElementById('fraudLevel').classList.add('high-risk');
+            }
+        });
+
+        function renderChart(modelOutput) {
+            const ctx = document.getElementById('probabilityChart').getContext('2d');
+            let fraudProbability = 0;
+
+            try {
+                // Safely parse the model_output JSON string
+                const output = JSON.parse(modelOutput);
+                fraudProbability = output.prediction || 0;
+            } catch (e) {
+                console.error("Could not parse model_output JSON:", modelOutput);
+            }
+
+            const notFraudProbability = 1 - fraudProbability;
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Probability of Fraud'],
+                    datasets: [{
+                        label: 'Fraud',
+                        data: [fraudProbability],
+                        backgroundColor: 'rgba(255, 55, 95, 0.6)', // var(--danger)
+                        borderColor: 'rgba(255, 55, 95, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Not Fraud',
+                        data: [notFraudProbability],
+                        backgroundColor: 'rgba(48, 209, 88, 0.6)', // var(--success)
+                        borderColor: 'rgba(48, 209, 88, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            max: 1,
+                            ticks: {
+                                color: 'var(--text-secondary)',
+                                callback: function (value) { return value * 100 + '%' }
+                            },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                        },
+                        y: {
+                            stacked: true,
+                            ticks: { color: 'var(--text-secondary)' },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: { color: 'var(--text-primary)' }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Model Prediction Confidence',
+                            color: 'var(--text-primary)',
+                            font: { size: 16 }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Dashboard | SecureClaim AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #0a84ff;
+            --primary-dark: #0066cc;
+            --secondary: #7856ff;
+            --accent: #ff375f;
+            --dark-bg: #000000;
+            --dark-surface: #1c1c1e;
+            --dark-card: #2c2c2e;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-tertiary: #6e6e73;
+            --success: #30d158;
+            --warning: #ff9f0a;
+            --danger: #ff375f;
+            --border: #404044;
+            --glass-bg: rgba(44, 44, 46, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--dark-bg);
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(10, 132, 255, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(120, 86, 255, 0.1) 0%, transparent 25%);
+            min-height: 100vh;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.6rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .logout-btn:hover {
+            background: var(--danger);
+            border-color: var(--danger);
+        }
+
+        /* Dashboard Layout */
+        .dashboard {
+            padding: 120px 0 40px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-title h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .dashboard-title p {
+            color: var(--text-secondary);
+        }
+
+        .dashboard-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .download-btn {
+            padding: 12px 20px;
+            background: var(--primary);
+            border: none;
+            border-radius: 12px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .download-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .period-selector {
+            padding: 12px 20px;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .icon-savings {
+            background: rgba(48, 209, 88, 0.2);
+            color: var(--success);
+        }
+
+        .icon-claims {
+            background: rgba(10, 132, 255, 0.2);
+            color: var(--primary);
+        }
+
+        .icon-fraud {
+            background: rgba(255, 55, 95, 0.2);
+            color: var(--danger);
+        }
+
+        .icon-roi {
+            background: rgba(120, 86, 255, 0.2);
+            color: var(--secondary);
+        }
+
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 5px 0;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .stat-change {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+
+        .change-positive {
+            color: var(--success);
+        }
+
+        .change-negative {
+            color: var(--danger);
+        }
+
+        /* Charts Grid */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .card-actions {
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        /* ROI Table */
+        .roi-table-container {
+            margin-bottom: 30px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        tbody tr {
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .trend-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .trend-up {
+            color: var(--success);
+        }
+
+        .trend-down {
+            color: var(--danger);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-surface);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copyright {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .dashboard-actions {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .period-selector,
+            .download-btn {
+                flex: 1;
+                min-width: 100%;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Counter animation */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .counting {
+            animation: countUp 1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header class="apple-glass">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>SecureClaim AI</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Input.html">New Analysis</a></li>
+                    <li><a href="Result.html">Fraud Dashboard</a></li>
+                    <li>
+                        <button class="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <a href="Home.html">
+                                Logout
+                            </a>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ROI Dashboard -->
+    <div class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="dashboard-title">
+                    <h1>ROI Dashboard</h1>
+                    <p>Track financial impact and savings from fraud detection</p>
+                </div>
+                <div class="dashboard-actions">
+                    <button class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Export Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card animated">
+                    <div class="stat-icon icon-savings">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="stat-value" id="savingsValue">₹4.2M</div>
+                    <div class="stat-label">Total Fraud Savings</div>
+                    <div class="stat-change change-positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>12.5% from last month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card animated">
+                    <div class="stat-icon icon-claims">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="stat-value" id="claimsValue">328</div>
+                    <div class="stat-label">Claims Processed</div>
+                    <div class="stat-change change-positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>8.3% from last month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card animated">
+                    <div class="stat-icon icon-fraud">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <div class="stat-value" id="fraudValue">47</div>
+                    <div class="stat-label">Fraudulent Claims Detected</div>
+                    <div class="stat-change change-positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>15.7% from last month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card animated">
+                    <div class="stat-icon icon-roi">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-value" id="roiValue">4.8x</div>
+                    <div class="stat-label">Return on Investment</div>
+                    <div class="stat-change change-positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>0.3x from last quarter</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Grid -->
+            <div class="charts-grid">
+                <div class="card animated">
+                    <div class="card-header">
+                        <div class="card-title">Monthly Savings Trend</div>
+                        <div class="card-actions">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="savingsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card animated">
+                    <div class="card-header">
+                        <div class="card-title">Savings by Category</div>
+                        <div class="card-actions">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROI Table -->
+            <div class="roi-table-container">
+                <div class="card-header">
+                    <div class="card-title">ROI by Department</div>
+                    <div class="card-actions">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Department</th>
+                                <th>Claims Processed</th>
+                                <th>Fraud Detected</th>
+                                <th>Savings</th>
+                                <th>ROI</th>
+                                <th>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cardiology</td>
+                                <td>42</td>
+                                <td>8</td>
+                                <td>₹825,000</td>
+                                <td>5.2x</td>
+                                <td class="trend-indicator trend-up"><i class="fas fa-arrow-up"></i> 12%</td>
+                            </tr>
+                            <tr>
+                                <td>Orthopedics</td>
+                                <td>38</td>
+                                <td>7</td>
+                                <td>₹760,000</td>
+                                <td>4.8x</td>
+                                <td class="trend-indicator trend-up"><i class="fas fa-arrow-up"></i> 8%</td>
+                            </tr>
+                            <tr>
+                                <td>Oncology</td>
+                                <td>35</td>
+                                <td>6</td>
+                                <td>₹692,000</td>
+                                <td>4.5x</td>
+                                <td class="trend-indicator trend-up"><i class="fas fa-arrow-up"></i> 5%</td>
+                            </tr>
+                            <tr>
+                                <td>Neurology</td>
+                                <td>28</td>
+                                <td>5</td>
+                                <td>₹543,000</td>
+                                <td>4.2x</td>
+                                <td class="trend-indicator trend-down"><i class="fas fa-arrow-down"></i> 3%</td>
+                            </tr>
+                            <tr>
+                                <td>Emergency</td>
+                                <td>45</td>
+                                <td>9</td>
+                                <td>₹945,000</td>
+                                <td>5.6x</td>
+                                <td class="trend-indicator trend-up"><i class="fas fa-arrow-up"></i> 15%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                const resp = await fetch('/api/dashboard');
+                const data = await resp.json();
+
+                // Update stat counters
+                document.getElementById('claimsValue').textContent = data.total_claims;
+                document.getElementById('fraudValue').textContent = data.claims_with_history;
+                document.getElementById('savingsValue').textContent = `₹${data.total_claim_amount}`;
+                document.getElementById('roiValue').textContent = "—"; // placeholder
+
+            } catch (err) {
+                console.error(err);
+                alert("Failed to load dashboard");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

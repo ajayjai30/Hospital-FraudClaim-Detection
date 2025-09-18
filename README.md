@@ -135,8 +135,8 @@ The system follows a classic **three-tier architecture**:
 8. **📁 Project Structure**
 
    ```graphql
-    ├── app.py                      # Main Flask application
-    ├── app5.py                     # Core prediction logic
+    ├── app3.py                     # Main Flask application
+    ├── app4.py                     # Streamlit application
     ├── datafeed.py                 # Script to load DB data
     ├── db_init.sql                 # Schema for 'claims' table
     ├── requirements.txt            # Dependencies

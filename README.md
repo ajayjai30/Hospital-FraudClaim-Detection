@@ -1,19 +1,27 @@
-🛡️ SecureClaim AI: Advanced Fraud Detection System
+# 🛡️ SecureClaim AI: Advanced Fraud Detection System
+
 SecureClaim AI is a full-stack web application designed to detect fraudulent insurance claims in real-time. It leverages a powerful XGBoost machine learning model to provide a comprehensive solution, from data submission and analysis to a rich dashboard for tracking financial impact and ROI.
 
-✨ Key Features
-🤖 AI-Powered Analysis: Utilizes a sophisticated XGBoost model to analyze hundreds of data points and identify subtle patterns indicative of fraud.
+---
 
-⚡ Real-Time Detection: Assess the risk of a claim as it is submitted, allowing for immediate action before funds are disbursed.
+## ✨ Key Features
 
-📊 Interactive Dashboard: A comprehensive ROI dashboard to track key metrics like total savings, claims processed, and fraudulent claims detected.
+- 🤖 **AI-Powered Analysis:** Utilizes a sophisticated XGBoost model to analyze hundreds of data points and identify subtle patterns indicative of fraud.
 
-📈 Detailed Results: Get a clear risk score, a human-readable risk label (Low, Medium, High), and a visual breakdown of the model's prediction confidence for each claim.
+- ⚡ **Real-Time Detection:** Assess the risk of a claim as it is submitted, allowing for immediate action before funds are disbursed.
 
-📂 Full-Stack Application: Includes a user-friendly frontend, a robust Flask backend API, and a PostgreSQL database.
+- 📊 **Interactive Dashboard:** A comprehensive ROI dashboard to track key metrics like total savings, claims processed, and fraudulent claims detected.
 
-🏗️ System Architecture
+- 📈 **Detailed Results:** Get a clear risk score, a human-readable risk label (Low, Medium, High), and a visual breakdown of the model's prediction confidence for each claim.
+
+- 📂 **Full-Stack Application:** Includes a user-friendly frontend, a robust Flask backend API, and a PostgreSQL database.
+
+---
+
+## 🏗️ System Architecture
+
 The application follows a classic three-tier architecture:
+
 
 +-----------------+      +------------------------+      +-------------------+
 |   Frontend      |      |   Backend (Flask API)  |      |   Data Layer      |

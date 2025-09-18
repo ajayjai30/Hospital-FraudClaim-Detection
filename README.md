@@ -70,8 +70,8 @@ The system follows a classic **three-tier architecture**:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/SecureClaim-AI.git
-   cd SecureClaim-AI
+   git clone https://github.com/your-username/Hospital-FraudClaim-Detection.git
+   cd Hospital-FraudClaim-Detection
    ```
 
 2. **Setup the backend**

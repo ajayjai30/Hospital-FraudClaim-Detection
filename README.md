@@ -87,12 +87,13 @@ The system follows a classic **three-tier architecture**:
     python -m venv venv
     .\venv\Scripts\activate
     ```
-   - Install Dependencies:
+   **Install Dependencies:**
+   
     ```python
     pip install -r requirements.txt
     ```
 
-3. **Run PostgreSQL with Docker**
+4. **Run PostgreSQL with Docker**
 
       ```bash
       docker run --name fraud-db \
@@ -107,20 +108,20 @@ The system follows a classic **three-tier architecture**:
       python connection_test.py
       ```
 
-4. **Initialize the DataBase Schema**
+5. **Initialize the DataBase Schema**
 
       ```bash
       psql -h localhost -U postgres -d fraud_detection -f db_init.sql
       # Password: password
       ```
-5. **Load Sample Data
+6. **Load Sample Data**
 
       - Place **test_data.xlsx** in the directory
       - Run:
         ```python
         python datafeed.py
         ```
-6. **▶️ Running the Application**
+7. **▶️ Running the Application**
 
       - Start the Backend:
         ```Python
@@ -130,7 +131,7 @@ The system follows a classic **three-tier architecture**:
       - Open the Frontend
           - Launch **localhost:5000** on your browser
 
-7. **📁 Project Structure**
+8. **📁 Project Structure**
 
    ```graphql
     ├── app.py                      # Main Flask application

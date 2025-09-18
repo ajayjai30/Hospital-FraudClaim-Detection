@@ -75,17 +75,19 @@ The system follows a classic **three-tier architecture**:
    ```
 
 2. **Setup the backend**
-     Create and activate a virtual environment
+     * Create and activate a virtual environment
 
-   # macOS/Linux
+   ### macOS/Linux
    ```bash
       python3 -m venv venv
       source venv/bin/activate
     ```
-    # Windows
+    ### Windows
     ```bash
     python -m venv venv
     .\venv\Scripts\activate
     ```
-    
+    * Install Dependencies:
+    pip install -r requirements.txt
+
 

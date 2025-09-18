@@ -1,7 +1,7 @@
 # 🛡️ SecureClaim AI: Advanced Fraud Detection System
 
 SecureClaim AI is a **full-stack web application** designed to detect fraudulent insurance claims in real time.  
-It leverages a powerful **XGBoost machine learning model** to provide an end-to-end solution — from claim submission and analysis to interactive dashboards that track financial impact and ROI.
+It leverages a powerful **XGBoost machine learning model** to provide an end-to-end solution — from claim submission and analysis to interactive dashboards that track financial impact and ROI. 
 
 ---
 

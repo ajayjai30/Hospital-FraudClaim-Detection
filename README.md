@@ -72,4 +72,20 @@ The system follows a classic **three-tier architecture**:
    ```bash
    git clone https://github.com/your-username/SecureClaim-AI.git
    cd SecureClaim-AI
-```
+   ```
+
+2. **Setup the backend**
+     Create and activate a virtual environment
+
+   # macOS/Linux
+   ```bash
+      python3 -m venv venv
+      source venv/bin/activate
+    ```
+    # Windows
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+    
+

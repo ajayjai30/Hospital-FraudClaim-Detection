@@ -27,7 +27,7 @@ It leverages a powerful **XGBoost machine learning model** to provide an end-to-
 ## 🏗️ System Architecture
 
 The system follows a classic **three-tier architecture**:
-
+```graphql
 +-----------------+ +------------------------+ +-------------------+
 | Frontend | | Backend (Flask API) | | Data Layer |
 | (HTML, CSS, JS) | <--> | (app.py) | <--> | (PostgreSQL DB) |
@@ -37,7 +37,7 @@ The system follows a classic **three-tier architecture**:
 | +--------------------+ |
 | | ML Model (XGBoost) | |
 | +--------------------+ |
-
+```
 
 
 - **Frontend**: Static web interface for claim submission and results lookup.  

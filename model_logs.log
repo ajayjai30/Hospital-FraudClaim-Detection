@@ -1,0 +1,505 @@
+2025-09-15 00:03:02,237 - ERROR - \u274c CRITICAL: Failed to load model. Error: No module named 'xgboost'
+2025-09-15 00:03:02,541 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:03:02,542 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:03:02,544 - INFO -  * Restarting with stat
+2025-09-15 00:03:04,406 - ERROR - \u274c CRITICAL: Failed to load model. Error: No module named 'xgboost'
+2025-09-15 00:03:04,583 - WARNING -  * Debugger is active!
+2025-09-15 00:03:04,589 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:03:38,612 - ERROR - \u274c CRITICAL: Failed to load model. Error: No module named 'xgboost'
+2025-09-15 00:03:38,882 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:03:38,882 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:03:38,885 - INFO -  * Restarting with stat
+2025-09-15 00:03:40,714 - ERROR - \u274c CRITICAL: Failed to load model. Error: No module named 'xgboost'
+2025-09-15 00:03:40,876 - WARNING -  * Debugger is active!
+2025-09-15 00:03:40,879 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:08:37,817 - INFO - \u2705 Model loaded successfully from xgboost_final_model.pkl
+2025-09-15 00:08:38,157 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:08:38,157 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:08:38,172 - INFO -  * Restarting with stat
+2025-09-15 00:08:41,007 - INFO - \u2705 Model loaded successfully from xgboost_final_model.pkl
+2025-09-15 00:08:41,189 - WARNING -  * Debugger is active!
+2025-09-15 00:08:41,199 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:15:22,617 - ERROR - \u274c CRITICAL: Failed to load model. Error: sklearn needs to be installed in order to use this module
+2025-09-15 00:15:22,883 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:15:22,883 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:15:22,888 - INFO -  * Restarting with stat
+2025-09-15 00:15:25,182 - ERROR - \u274c CRITICAL: Failed to load model. Error: sklearn needs to be installed in order to use this module
+2025-09-15 00:15:25,424 - WARNING -  * Debugger is active!
+2025-09-15 00:15:25,438 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:18:25,332 - ERROR - \u274c CRITICAL: Failed to load model. Error: bad allocation
+2025-09-15 00:18:25,643 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:18:25,643 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:18:25,646 - INFO -  * Restarting with stat
+2025-09-15 00:18:29,374 - ERROR - \u274c CRITICAL: Failed to load model. Error: bad allocation
+2025-09-15 00:18:29,597 - WARNING -  * Debugger is active!
+2025-09-15 00:18:29,603 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:18:57,100 - ERROR - \u274c CRITICAL: Failed to load model. Error: bad allocation
+2025-09-15 00:18:57,353 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:18:57,355 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:18:57,358 - INFO -  * Restarting with stat
+2025-09-15 00:19:01,307 - ERROR - \u274c CRITICAL: Failed to load model. Error: bad allocation
+2025-09-15 00:19:01,509 - WARNING -  * Debugger is active!
+2025-09-15 00:19:01,514 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:19:41,763 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 00:19:42,047 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:19:42,047 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:19:42,055 - INFO -  * Restarting with stat
+2025-09-15 00:19:46,359 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 00:19:46,594 - WARNING -  * Debugger is active!
+2025-09-15 00:19:46,603 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:21:25,739 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 00:21:25,971 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:21:25,971 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:21:25,973 - INFO -  * Restarting with stat
+2025-09-15 00:21:28,736 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 00:21:28,889 - WARNING -  * Debugger is active!
+2025-09-15 00:21:28,892 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:21:32,493 - INFO - 127.0.0.1 - - [15/Sep/2025 00:21:32] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 00:21:35,181 - INFO - 127.0.0.1 - - [15/Sep/2025 00:21:35] "GET /Input.html HTTP/1.1" 200 -
+2025-09-15 00:24:37,564 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 00:24:38,038 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:24:38,038 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:24:38,045 - INFO -  * Restarting with stat
+2025-09-15 00:24:45,865 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 00:24:46,187 - WARNING -  * Debugger is active!
+2025-09-15 00:24:46,198 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:24:46,798 - INFO - 127.0.0.1 - - [15/Sep/2025 00:24:46] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 00:24:48,601 - INFO - 127.0.0.1 - - [15/Sep/2025 00:24:48] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 00:40:18,562 - ERROR - \u274c CRITICAL: Failed to load model. Error: [00:40:18] C:\actions-runner\_work\xgboost\xgboost\dmlc-core\src\io\local_filesys.cc:210: Check failed: allow_null:  LocalFileSystem::Open "model.pkl": No such file or directory
+2025-09-15 00:41:41,324 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 00:41:41,600 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 00:41:41,601 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 00:41:41,605 - INFO -  * Restarting with stat
+2025-09-15 00:41:44,281 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 00:41:44,463 - WARNING -  * Debugger is active!
+2025-09-15 00:41:44,470 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:41:51,742 - INFO - 127.0.0.1 - - [15/Sep/2025 00:41:51] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 00:41:56,761 - INFO - 127.0.0.1 - - [15/Sep/2025 00:41:56] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 00:43:37,156 - INFO - 127.0.0.1 - - [15/Sep/2025 00:43:37] "[33mGET /api/result/CLM67387 HTTP/1.1[0m" 404 -
+2025-09-15 00:49:58,874 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\datafeed.py', reloading
+2025-09-15 00:49:59,688 - INFO -  * Restarting with stat
+2025-09-15 00:50:03,159 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 00:50:03,424 - WARNING -  * Debugger is active!
+2025-09-15 00:50:03,428 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 00:50:58,569 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\datafeed.py', reloading
+2025-09-15 00:50:59,123 - INFO -  * Restarting with stat
+2025-09-15 01:29:02,124 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:29:02,531 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 01:29:02,531 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 01:29:02,535 - INFO -  * Restarting with stat
+2025-09-15 01:29:08,371 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:29:08,738 - WARNING -  * Debugger is active!
+2025-09-15 01:29:08,751 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 01:32:17,401 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:32:17,724 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 01:32:17,725 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 01:32:17,734 - INFO -  * Restarting with stat
+2025-09-15 01:41:58,069 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:41:58,343 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 01:41:58,343 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 01:41:58,346 - INFO -  * Restarting with stat
+2025-09-15 01:42:03,277 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:42:03,518 - WARNING -  * Debugger is active!
+2025-09-15 01:42:03,539 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 01:42:05,365 - INFO - 127.0.0.1 - - [15/Sep/2025 01:42:05] "GET / HTTP/1.1" 200 -
+2025-09-15 01:42:08,561 - INFO - 127.0.0.1 - - [15/Sep/2025 01:42:08] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 01:42:57,355 - INFO - 127.0.0.1 - - [15/Sep/2025 01:42:57] "[33mGET /api/result/CLM67387 HTTP/1.1[0m" 404 -
+2025-09-15 01:45:05,315 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\datafeed.py', reloading
+2025-09-15 01:45:06,733 - INFO -  * Restarting with stat
+2025-09-15 01:45:16,697 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:45:17,070 - WARNING -  * Debugger is active!
+2025-09-15 01:45:17,084 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 01:45:28,343 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app.py', reloading
+2025-09-15 01:45:29,098 - INFO -  * Restarting with stat
+2025-09-15 01:51:26,649 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:51:26,762 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 01:51:26,762 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 01:51:26,765 - INFO -  * Restarting with stat
+2025-09-15 01:51:32,498 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:51:32,553 - WARNING -  * Debugger is active!
+2025-09-15 01:51:32,565 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 01:51:59,154 - INFO - 127.0.0.1 - - [15/Sep/2025 01:51:59] "[33mGET / HTTP/1.1[0m" 404 -
+2025-09-15 01:51:59,779 - INFO - 127.0.0.1 - - [15/Sep/2025 01:51:59] "[33mGET / HTTP/1.1[0m" 404 -
+2025-09-15 01:52:14,251 - INFO - 127.0.0.1 - - [15/Sep/2025 01:52:14] "[33mGET / HTTP/1.1[0m" 404 -
+2025-09-15 01:52:15,469 - INFO - 127.0.0.1 - - [15/Sep/2025 01:52:15] "[33mGET / HTTP/1.1[0m" 404 -
+2025-09-15 01:52:37,006 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:52:37,265 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 01:52:37,265 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 01:52:37,271 - INFO -  * Restarting with stat
+2025-09-15 01:52:42,631 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:52:42,798 - WARNING -  * Debugger is active!
+2025-09-15 01:52:42,805 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 01:52:52,915 - INFO - 127.0.0.1 - - [15/Sep/2025 01:52:52] "GET / HTTP/1.1" 200 -
+2025-09-15 01:53:14,703 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:53:14,797 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 01:53:14,797 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 01:53:14,800 - INFO -  * Restarting with stat
+2025-09-15 01:53:19,459 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:53:19,558 - WARNING -  * Debugger is active!
+2025-09-15 01:53:19,562 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 01:53:24,196 - INFO - 127.0.0.1 - - [15/Sep/2025 01:53:24] "[33mGET / HTTP/1.1[0m" 404 -
+2025-09-15 01:53:25,684 - INFO - 127.0.0.1 - - [15/Sep/2025 01:53:25] "[33mGET / HTTP/1.1[0m" 404 -
+2025-09-15 01:55:21,813 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app3.py', reloading
+2025-09-15 01:55:23,693 - INFO -  * Restarting with stat
+2025-09-15 01:55:29,925 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:55:29,970 - WARNING -  * Debugger is active!
+2025-09-15 01:55:29,976 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 01:55:43,303 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:55:43,545 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 01:55:43,545 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 01:55:43,551 - INFO -  * Restarting with stat
+2025-09-15 01:55:49,066 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 01:55:49,360 - WARNING -  * Debugger is active!
+2025-09-15 01:55:49,377 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 01:55:50,656 - INFO - 127.0.0.1 - - [15/Sep/2025 01:55:50] "GET / HTTP/1.1" 200 -
+2025-09-15 01:55:53,827 - INFO - 127.0.0.1 - - [15/Sep/2025 01:55:53] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 01:56:23,270 - INFO - 127.0.0.1 - - [15/Sep/2025 01:56:23] "[33mGET /api/result/CLM67387 HTTP/1.1[0m" 404 -
+2025-09-15 01:56:45,157 - INFO - 127.0.0.1 - - [15/Sep/2025 01:56:45] "[33mGET /api/result/CLM67387 HTTP/1.1[0m" 404 -
+2025-09-15 02:00:17,565 - INFO - 127.0.0.1 - - [15/Sep/2025 02:00:17] "GET /Input.html HTTP/1.1" 200 -
+2025-09-15 02:00:37,231 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:00:37,472 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:00:37,473 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:00:37,475 - INFO -  * Restarting with stat
+2025-09-15 02:00:42,984 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:00:43,142 - WARNING -  * Debugger is active!
+2025-09-15 02:00:43,145 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:00:46,917 - INFO - 127.0.0.1 - - [15/Sep/2025 02:00:46] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 02:00:49,223 - INFO - 127.0.0.1 - - [15/Sep/2025 02:00:49] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:04:54,850 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:04:55,037 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:04:55,037 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:04:55,040 - INFO -  * Restarting with stat
+2025-09-15 02:04:58,329 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:04:58,506 - WARNING -  * Debugger is active!
+2025-09-15 02:04:58,521 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:05:11,045 - INFO - 127.0.0.1 - - [15/Sep/2025 02:05:11] "GET /Input.html HTTP/1.1" 200 -
+2025-09-15 02:15:34,959 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:15:36,564 - INFO -  * Restarting with stat
+2025-09-15 02:15:43,015 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:15:43,172 - WARNING -  * Debugger is active!
+2025-09-15 02:15:43,186 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:15:46,432 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:15:47,057 - INFO -  * Restarting with stat
+2025-09-15 02:16:01,683 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:16:01,918 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:16:01,918 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:16:01,922 - INFO -  * Restarting with stat
+2025-09-15 02:16:07,757 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:16:07,954 - WARNING -  * Debugger is active!
+2025-09-15 02:16:07,958 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:16:27,012 - INFO - 127.0.0.1 - - [15/Sep/2025 02:16:27] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 02:16:37,731 - INFO - 127.0.0.1 - - [15/Sep/2025 02:16:37] "GET /Input.html HTTP/1.1" 200 -
+2025-09-15 02:16:48,939 - INFO - 127.0.0.1 - - [15/Sep/2025 02:16:48] "[33mGET /api/result/CLM67387 HTTP/1.1[0m" 404 -
+2025-09-15 02:16:56,391 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:16:57,619 - INFO -  * Restarting with stat
+2025-09-15 02:17:05,384 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:17:05,650 - WARNING -  * Debugger is active!
+2025-09-15 02:17:05,657 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:18:29,107 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:18:30,213 - INFO -  * Restarting with stat
+2025-09-15 02:18:35,804 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:18:35,986 - WARNING -  * Debugger is active!
+2025-09-15 02:18:35,990 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:18:55,305 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:18:55,597 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:18:55,598 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:18:55,607 - INFO -  * Restarting with stat
+2025-09-15 02:19:00,604 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:19:00,811 - WARNING -  * Debugger is active!
+2025-09-15 02:19:00,819 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:19:30,786 - INFO - 127.0.0.1 - - [15/Sep/2025 02:19:30] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 02:19:34,746 - INFO - 127.0.0.1 - - [15/Sep/2025 02:19:34] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:19:46,462 - INFO - 127.0.0.1 - - [15/Sep/2025 02:19:46] "[33mGET /api/result/CLM67387 HTTP/1.1[0m" 404 -
+2025-09-15 02:19:54,207 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:19:55,251 - INFO -  * Restarting with stat
+2025-09-15 02:20:02,380 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:20:02,635 - WARNING -  * Debugger is active!
+2025-09-15 02:20:02,638 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:24:36,895 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:24:48,806 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:24:49,152 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:24:49,152 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:24:49,163 - INFO -  * Restarting with stat
+2025-09-15 02:24:57,710 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:24:58,113 - WARNING -  * Debugger is active!
+2025-09-15 02:24:58,122 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:25:01,290 - INFO - 127.0.0.1 - - [15/Sep/2025 02:25:01] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 02:25:03,407 - INFO - 127.0.0.1 - - [15/Sep/2025 02:25:03] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:25:14,484 - INFO - 127.0.0.1 - - [15/Sep/2025 02:25:14] "[33mGET /api/result/CLM67387 HTTP/1.1[0m" 404 -
+2025-09-15 02:25:26,012 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:25:27,627 - INFO -  * Restarting with stat
+2025-09-15 02:28:31,796 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:28:32,017 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:28:32,017 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:28:32,021 - INFO -  * Restarting with stat
+2025-09-15 02:28:37,327 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:28:37,449 - WARNING -  * Debugger is active!
+2025-09-15 02:28:37,455 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:28:50,086 - INFO - 127.0.0.1 - - [15/Sep/2025 02:28:50] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 02:28:52,576 - INFO - 127.0.0.1 - - [15/Sep/2025 02:28:52] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:29:01,113 - INFO - 127.0.0.1 - - [15/Sep/2025 02:29:01] "[33mGET /api/result/CLM67387 HTTP/1.1[0m" 404 -
+2025-09-15 02:29:14,566 - INFO - 127.0.0.1 - - [15/Sep/2025 02:29:14] "[33mGET /api/result/988990 HTTP/1.1[0m" 404 -
+2025-09-15 02:29:43,186 - INFO - 127.0.0.1 - - [15/Sep/2025 02:29:43] "[33mGET /api/result/98799808 HTTP/1.1[0m" 404 -
+2025-09-15 02:30:00,116 - INFO - 127.0.0.1 - - [15/Sep/2025 02:30:00] "[33mGET /api/result/0988080 HTTP/1.1[0m" 404 -
+2025-09-15 02:30:16,472 - INFO - 127.0.0.1 - - [15/Sep/2025 02:30:16] "[33mGET /api/result/JJKHGCHJKH HTTP/1.1[0m" 404 -
+2025-09-15 02:30:45,848 - INFO - 127.0.0.1 - - [15/Sep/2025 02:30:45] "GET /api/result/98768 HTTP/1.1" 200 -
+2025-09-15 02:31:06,462 - INFO - 127.0.0.1 - - [15/Sep/2025 02:31:06] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:31:11,705 - INFO - 127.0.0.1 - - [15/Sep/2025 02:31:11] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 02:31:27,013 - INFO - 127.0.0.1 - - [15/Sep/2025 02:31:27] "[35m[1mPOST /api/analyze/67387 HTTP/1.1[0m" 500 -
+2025-09-15 02:32:13,851 - INFO - 127.0.0.1 - - [15/Sep/2025 02:32:13] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:32:20,461 - INFO - 127.0.0.1 - - [15/Sep/2025 02:32:20] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 02:32:33,604 - INFO - 127.0.0.1 - - [15/Sep/2025 02:32:33] "[35m[1mPOST /api/analyze/67387 HTTP/1.1[0m" 500 -
+2025-09-15 02:38:11,159 - INFO - 127.0.0.1 - - [15/Sep/2025 02:38:11] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:38:17,142 - INFO - 127.0.0.1 - - [15/Sep/2025 02:38:17] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 02:38:24,902 - INFO - 127.0.0.1 - - [15/Sep/2025 02:38:24] "[35m[1mPOST /api/analyze/67387 HTTP/1.1[0m" 500 -
+2025-09-15 02:41:31,541 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:41:33,182 - INFO -  * Restarting with stat
+2025-09-15 02:41:44,113 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:41:44,373 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:41:44,374 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:41:44,378 - INFO -  * Restarting with stat
+2025-09-15 02:41:48,674 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:41:48,815 - WARNING -  * Debugger is active!
+2025-09-15 02:41:48,832 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:42:10,247 - INFO - 127.0.0.1 - - [15/Sep/2025 02:42:10] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 02:42:14,327 - INFO - 127.0.0.1 - - [15/Sep/2025 02:42:14] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:42:23,372 - INFO - 127.0.0.1 - - [15/Sep/2025 02:42:23] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 02:42:47,735 - INFO - 127.0.0.1 - - [15/Sep/2025 02:42:47] "[35m[1mPOST /api/analyze/67387 HTTP/1.1[0m" 500 -
+2025-09-15 02:43:07,665 - INFO - 127.0.0.1 - - [15/Sep/2025 02:43:07] "[35m[1mPOST /api/analyze/67387 HTTP/1.1[0m" 500 -
+2025-09-15 02:44:27,600 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:44:28,374 - INFO -  * Restarting with stat
+2025-09-15 02:44:32,878 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:44:33,068 - WARNING -  * Debugger is active!
+2025-09-15 02:44:33,079 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:44:52,320 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:44:52,553 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:44:52,553 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:44:52,558 - INFO -  * Restarting with stat
+2025-09-15 02:44:57,929 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:44:58,085 - WARNING -  * Debugger is active!
+2025-09-15 02:44:58,088 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:45:09,596 - INFO - 127.0.0.1 - - [15/Sep/2025 02:45:09] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 02:45:12,108 - INFO - 127.0.0.1 - - [15/Sep/2025 02:45:12] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 02:45:14,201 - INFO - 127.0.0.1 - - [15/Sep/2025 02:45:14] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:45:22,349 - INFO - 127.0.0.1 - - [15/Sep/2025 02:45:22] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 02:45:31,177 - INFO - 127.0.0.1 - - [15/Sep/2025 02:45:31] "[35m[1mPOST /api/analyze/67387 HTTP/1.1[0m" 500 -
+2025-09-15 02:50:15,210 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:50:16,132 - INFO -  * Restarting with stat
+2025-09-15 02:50:27,129 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:50:27,356 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:50:27,356 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:50:27,358 - INFO -  * Restarting with stat
+2025-09-15 02:50:34,104 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:50:34,567 - WARNING -  * Debugger is active!
+2025-09-15 02:50:34,582 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:50:37,802 - INFO - 127.0.0.1 - - [15/Sep/2025 02:50:37] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:50:47,199 - INFO - 127.0.0.1 - - [15/Sep/2025 02:50:47] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 02:50:53,558 - INFO - 127.0.0.1 - - [15/Sep/2025 02:50:53] "[35m[1mPOST /api/analyze/67387 HTTP/1.1[0m" 500 -
+2025-09-15 02:56:02,549 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 02:56:03,520 - INFO -  * Restarting with stat
+2025-09-15 02:56:14,368 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:56:14,562 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 02:56:14,563 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 02:56:14,567 - INFO -  * Restarting with stat
+2025-09-15 02:56:19,051 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 02:56:19,198 - WARNING -  * Debugger is active!
+2025-09-15 02:56:19,202 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 02:56:28,586 - INFO - 127.0.0.1 - - [15/Sep/2025 02:56:28] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:56:34,413 - INFO - 127.0.0.1 - - [15/Sep/2025 02:56:34] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 02:56:39,284 - INFO - 127.0.0.1 - - [15/Sep/2025 02:56:39] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 02:56:46,750 - INFO - 127.0.0.1 - - [15/Sep/2025 02:56:46] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 02:56:53,560 - INFO - 127.0.0.1 - - [15/Sep/2025 02:56:53] "[35m[1mPOST /api/analyze/67387 HTTP/1.1[0m" 500 -
+2025-09-15 03:00:04,377 - INFO -  * Detected change in 'D:\\FRAUDClaims\\Claim\\Backend\\app4.py', reloading
+2025-09-15 03:00:14,147 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 03:00:14,533 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 03:00:14,534 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 03:00:14,542 - INFO -  * Restarting with stat
+2025-09-15 03:00:25,578 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 03:00:25,826 - WARNING -  * Debugger is active!
+2025-09-15 03:00:25,843 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 03:00:26,982 - INFO - 127.0.0.1 - - [15/Sep/2025 03:00:26] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 03:00:27,052 - INFO - 127.0.0.1 - - [15/Sep/2025 03:00:27] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 03:00:27,447 - INFO - 127.0.0.1 - - [15/Sep/2025 03:00:27] "[36mGET / HTTP/1.1[0m" 304 -
+2025-09-15 03:00:38,381 - INFO - 127.0.0.1 - - [15/Sep/2025 03:00:38] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 03:00:45,886 - INFO - 127.0.0.1 - - [15/Sep/2025 03:00:45] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 03:00:50,734 - INFO - \u2705 Input preprocessed successfully.
+2025-09-15 03:00:50,769 - INFO - \u2705 Prediction successful: {'prediction': 0, 'probabilities': [0.9203851222991943, 0.07961490750312805]}
+2025-09-15 03:00:50,788 - INFO - 127.0.0.1 - - [15/Sep/2025 03:00:50] "[35m[1mPOST /api/analyze/67387 HTTP/1.1[0m" 500 -
+2025-09-15 03:03:37,091 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 03:03:37,306 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 03:03:37,307 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 03:03:37,319 - INFO -  * Restarting with stat
+2025-09-15 03:03:42,129 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 03:03:42,305 - WARNING -  * Debugger is active!
+2025-09-15 03:03:42,309 - INFO -  * Debugger PIN: 114-591-560
+2025-09-15 03:04:00,077 - INFO - 127.0.0.1 - - [15/Sep/2025 03:04:00] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-15 03:05:23,889 - INFO - 127.0.0.1 - - [15/Sep/2025 03:05:23] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 03:05:29,212 - INFO - \u2705 Input preprocessed successfully.
+2025-09-15 03:05:29,261 - INFO - \u2705 Prediction successful: {'prediction': 0, 'probabilities': [0.9203851222991943, 0.07961490750312805]}
+2025-09-15 03:05:29,295 - INFO - 127.0.0.1 - - [15/Sep/2025 03:05:29] "POST /api/analyze/67387 HTTP/1.1" 200 -
+2025-09-15 03:05:30,250 - INFO - 127.0.0.1 - - [15/Sep/2025 03:05:30] "GET /Result.html?claim_id=67387 HTTP/1.1" 200 -
+2025-09-15 03:05:30,478 - INFO - 127.0.0.1 - - [15/Sep/2025 03:05:30] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 22:59:56,586 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 22:59:57,042 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-15 22:59:57,042 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-15 22:59:57,046 - INFO -  * Restarting with stat
+2025-09-15 23:00:00,454 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-15 23:00:00,609 - WARNING -  * Debugger is active!
+2025-09-15 23:00:00,614 - INFO -  * Debugger PIN: 100-915-692
+2025-09-15 23:00:23,496 - INFO - 127.0.0.1 - - [15/Sep/2025 23:00:23] "GET / HTTP/1.1" 200 -
+2025-09-15 23:00:25,348 - INFO - 127.0.0.1 - - [15/Sep/2025 23:00:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-15 23:00:28,765 - INFO - 127.0.0.1 - - [15/Sep/2025 23:00:28] "GET /Input.html HTTP/1.1" 200 -
+2025-09-15 23:00:33,592 - INFO - 127.0.0.1 - - [15/Sep/2025 23:00:33] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 23:00:43,290 - INFO - \u2705 Input preprocessed successfully.
+2025-09-15 23:00:43,357 - INFO - \u2705 Prediction successful: {'prediction': 0, 'probabilities': [0.9203851222991943, 0.07961490750312805]}
+2025-09-15 23:00:43,460 - INFO - 127.0.0.1 - - [15/Sep/2025 23:00:43] "POST /api/analyze/67387 HTTP/1.1" 200 -
+2025-09-15 23:00:44,345 - INFO - 127.0.0.1 - - [15/Sep/2025 23:00:44] "GET /Result.html?claim_id=67387 HTTP/1.1" 200 -
+2025-09-15 23:00:44,801 - INFO - 127.0.0.1 - - [15/Sep/2025 23:00:44] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-15 23:02:50,998 - INFO - 127.0.0.1 - - [15/Sep/2025 23:02:50] "GET /Home.html HTTP/1.1" 200 -
+2025-09-16 01:13:02,334 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-16 01:13:02,599 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-16 01:13:02,599 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-16 01:13:02,633 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-16 01:13:05,863 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-16 01:13:06,014 - WARNING -  * Debugger is active!
+2025-09-16 01:13:06,017 - INFO -  * Debugger PIN: 100-915-692
+2025-09-16 01:14:15,322 - INFO - 127.0.0.1 - - [16/Sep/2025 01:14:15] "[36mGET /Result.html?claim_id=98768 HTTP/1.1[0m" 304 -
+2025-09-16 01:14:15,674 - INFO - 127.0.0.1 - - [16/Sep/2025 01:14:15] "GET /api/result/98768 HTTP/1.1" 200 -
+2025-09-16 01:14:21,670 - INFO - 127.0.0.1 - - [16/Sep/2025 01:14:21] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-16 01:14:26,713 - INFO - 127.0.0.1 - - [16/Sep/2025 01:14:26] "GET /api/result/98768 HTTP/1.1" 200 -
+2025-09-16 01:14:32,708 - INFO - \u2705 Input preprocessed successfully.
+2025-09-16 01:14:32,734 - INFO - \u2705 Prediction successful: {'prediction': 0, 'probabilities': [0.8587157726287842, 0.14128424227237701]}
+2025-09-16 01:14:32,777 - INFO - 127.0.0.1 - - [16/Sep/2025 01:14:32] "POST /api/analyze/98768 HTTP/1.1" 200 -
+2025-09-16 01:14:33,129 - INFO - 127.0.0.1 - - [16/Sep/2025 01:14:33] "[36mGET /Result.html?claim_id=98768 HTTP/1.1[0m" 304 -
+2025-09-16 01:14:33,288 - INFO - 127.0.0.1 - - [16/Sep/2025 01:14:33] "GET /api/result/98768 HTTP/1.1" 200 -
+2025-09-16 01:14:53,969 - INFO -  * Detected change in 'D:\\FRAUDCLAIMS\\Claim\\Backend\\model_wrapper.py', reloading
+2025-09-16 01:14:56,304 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-16 01:15:01,137 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-16 01:15:01,326 - WARNING -  * Debugger is active!
+2025-09-16 01:15:01,334 - INFO -  * Debugger PIN: 100-915-692
+2025-09-16 01:16:50,599 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-16 01:16:50,756 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.104:5000
+2025-09-16 01:16:50,757 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-16 01:16:50,776 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-16 01:16:53,309 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-16 01:16:53,418 - WARNING -  * Debugger is active!
+2025-09-16 01:16:53,420 - INFO -  * Debugger PIN: 100-915-692
+2025-09-16 01:16:59,193 - INFO - 127.0.0.1 - - [16/Sep/2025 01:16:59] "GET /Result.html?claim_id=98768 HTTP/1.1" 200 -
+2025-09-16 01:16:59,342 - INFO - 127.0.0.1 - - [16/Sep/2025 01:16:59] "GET /api/result/98768 HTTP/1.1" 200 -
+2025-09-16 01:17:14,173 - INFO - 127.0.0.1 - - [16/Sep/2025 01:17:14] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-16 01:17:18,989 - INFO - 127.0.0.1 - - [16/Sep/2025 01:17:18] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-16 01:17:27,301 - INFO - \u2705 Input preprocessed successfully.
+2025-09-16 01:17:27,323 - INFO - \u2705 Prediction successful: {'prediction': 0, 'probabilities': [0.8587157726287842, 0.14128424227237701]}
+2025-09-16 01:17:27,343 - INFO - 127.0.0.1 - - [16/Sep/2025 01:17:27] "POST /api/analyze/67387 HTTP/1.1" 200 -
+2025-09-16 01:17:27,445 - INFO - 127.0.0.1 - - [16/Sep/2025 01:17:27] "GET /Result.html?claim_id=67387 HTTP/1.1" 200 -
+2025-09-16 01:17:27,751 - INFO - 127.0.0.1 - - [16/Sep/2025 01:17:27] "GET /api/result/67387 HTTP/1.1" 200 -
+2025-09-16 01:17:58,195 - INFO - 127.0.0.1 - - [16/Sep/2025 01:17:58] "GET /Dashboard.html HTTP/1.1" 200 -
+2025-09-16 01:17:58,340 - INFO - 127.0.0.1 - - [16/Sep/2025 01:17:58] "[33mGET /api/dashboard HTTP/1.1[0m" 404 -
+2025-09-16 01:18:16,435 - INFO - 127.0.0.1 - - [16/Sep/2025 01:18:16] "[36mGET /Home.html HTTP/1.1[0m" 304 -
+2025-09-16 01:18:18,282 - INFO - 127.0.0.1 - - [16/Sep/2025 01:18:18] "[36mGET /Input.html HTTP/1.1[0m" 304 -
+2025-09-17 20:09:50,662 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-17 20:09:54,879 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.106:5000
+2025-09-17 20:09:54,879 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-17 20:09:54,914 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-17 20:09:58,231 - INFO - \u2705 Model loaded successfully from xgboost_final_model.json
+2025-09-17 20:10:02,355 - WARNING -  * Debugger is active!
+2025-09-17 20:10:02,394 - INFO -  * Debugger PIN: 114-591-560

@@ -106,8 +106,47 @@ The system follows a classic **three-tier architecture**:
       ```python
       python connection_test.py
       ```
-        
 
-        
+4. **Initialize the DataBase Schema**
+
+      ```bash
+      psql -h localhost -U postgres -d fraud_detection -f db_init.sql
+      # Password: password
+      ```
+5. **Load Sample Data
+
+      - Place **test_data.xlsx** in the directory
+      - Run:
+        ```python
+        python datafeed.py
+        ```
+6. **▶️ Running the Application**
+
+      - Start the Backend:
+        ```Python
+          python app.py
+        ```
+      - Backend Runs at: http://127.0.0.1:5000(May vary)
+      - Open the Frontend
+          - Launch **localhost:5000** on your browser
+
+7. **📁 Project Structure**
+
+   ```graphql
+    ├── app.py                      # Main Flask application
+    ├── app5.py                     # Core prediction logic
+    ├── datafeed.py                 # Script to load DB data
+    ├── db_init.sql                 # Schema for 'claims' table
+    ├── requirements.txt            # Dependencies
+    │
+    ├── xgboost_final_model.json    # Pre-trained XGBoost model
+    ├── frequency_maps.txt          # Frequency encoding maps
+    │
+    ├── Home.html                   # Landing page
+    ├── Input.html                  # Claim submission page
+    ├── Result.html                 # Claim analysis results
+    └── Dashboard.html              # ROI and statistics dashboard
+    ```
+
 
 

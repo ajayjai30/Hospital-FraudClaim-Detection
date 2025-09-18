@@ -127,7 +127,8 @@ The system follows a classic **three-tier architecture**:
         ```Python
           python app.py
         ```
-      - Backend Runs at: http://127.0.0.1:5000(May vary)
+      - Backend Runs at: http://127.0.0.1:5000
+        (May vary)
       - Open the Frontend
           - Launch **localhost:5000** on your browser
 
